@@ -21,7 +21,7 @@
           class="form-control"
         />
         <div class="d-flex flex-row-reverse">
-          <button type="submit" class="btn btn-primary mt-2">
+          <button @click="createComponent" type="button" class="btn btn-primary mt-2">
             Add Comments
           </button>
         </div>
@@ -54,8 +54,9 @@ export default {
     };
   },
   methods: {
-    inputName(event) {
-      this;
+    createComponent(){
+      this.id = Date.now()
+      // this.name = 
     },
   },
 };

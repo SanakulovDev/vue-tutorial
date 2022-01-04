@@ -20,9 +20,9 @@
         class="form-control"
       />
       <div class="d-flex flex-row-reverse my-3">
-        <button @click="createComment" type="button" class="btn btn-primary">
+        <my-button @click="createComment" type="button" class="btn btn-primary">
           Add Comments
-        </button>
+        </my-button>
       </div>
     </form>
   </div>
@@ -32,7 +32,7 @@
 export default {
   data() {
     return {
-      comment: {
+     comment: {
         name: "",
         email: "",
         content: "",

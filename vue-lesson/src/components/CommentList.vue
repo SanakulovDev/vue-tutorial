@@ -1,19 +1,23 @@
 <template>
   <div class="row align-items-center justify-content-center">
     <div
-      class="col-md-6 border border-danger mr-2"
+      class="col-md-12 rounded my-2 comment"
       v-for="comment in comments"
-      v-bind:key="comment.id"
-    >
-      <p><b>Name: </b>{{ comment.name }}</p>
-      <p><b>Email: </b>{{ comment.email }}</p>
-      <p><b>Content: </b>{{ comment.content }}</p>
+      :key="comment.id"
+>
+  <comment-item :comment="comment" />
     </div>
   </div>
 </template>
 
 <script>
+import CommentItem from './CommentItem.vue';
+
 export default {
+
+  components: {
+    CommentItem
+  },
     props: {
         comments:{
             type: Array,
@@ -24,4 +28,10 @@ export default {
 </script>
 
 <style scoped>
+.comment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 5px solid rgb(109, 128, 209);
+}
 </style>
